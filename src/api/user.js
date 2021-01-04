@@ -11,9 +11,6 @@ export const login = (data) => {
 export const getUserProfile = () => {
   return request ({
     method : 'GET',
-    url : '/app/v1_0/user/profile',
-    // headers : {
-    //   Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDg4MjE5MzAsInVzZXJfaWQiOjEzNDIwMTEwODcxMTcwOTA4MTYsInJlZnJlc2giOmZhbHNlfQ.oNvS5iWWwyF9OLFwB7wO_TuFhT5TtKBrQyoMVaJYls4'
-    // }
+    url : '/app/v1_0/user/profile'
   })
 }

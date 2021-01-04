@@ -46,6 +46,7 @@
 <script>
 import AppAside from './aside'
 import { getUserProfile } from '@/api/user' //接口已弃用，使用静态数据代替
+import GlobalBus from '@/utils/global-bus'
 
   export default {
     name : 'LayoutIndex',
@@ -60,7 +61,13 @@ import { getUserProfile } from '@/api/user' //接口已弃用，使用静态数�
       AppAside
     },
     created() {
-      this.getUserInfo()
+      this.getUserInfo(),
+      GlobalBus.$on('UploadUserP', data => {
+        this.user.photo = data
+      })
+       GlobalBus.$on('UploadUserN', data => {
+        this.user.name = data
+      })
     },
     methods: {
       getUserInfo(){
@@ -129,8 +136,7 @@ import { getUserProfile } from '@/api/user' //接口已弃用，使用静态数�
     margin-right: 8px;
   }
 }
-
-.main {
-  // background-color: rgb(231, 227, 227);
-}
+// .main {
+//   // background-color: rgb(231, 227, 227);
+// }
 </style>

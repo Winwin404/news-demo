@@ -57,7 +57,7 @@
         <el-table-column
           label="封面">
           <template slot-scope="imagescope" >
-            <el-image :src="imagescope.row.cover" lazy>
+            <el-image :src="imagescope.row.cover" lazy  class="cover-class">
               <!-- <div slot="error" class="image-slot">
                 加载中<i class="el-icon-picture-outline">...</i>
               </div> -->
@@ -90,6 +90,7 @@
               type="primary" 
               icon="el-icon-edit" 
               circle
+              @click="$router.push('/publish?id='+oprScope.$index)"
             ></el-button>
             <el-button
               size="mini"
@@ -301,7 +302,6 @@ import { getArticleChannels } from '@/api/article'
           })
         })
       }
-
     },
   }
 </script>
@@ -314,7 +314,7 @@ import { getArticleChannels } from '@/api/article'
   margin-bottom: 20px;
 }
 .cover-class {
-  width: 70px;
+  width: 80px;
   background-size: cover;
 }
 </style>
